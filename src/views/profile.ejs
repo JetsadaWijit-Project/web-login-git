@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <h1>Welcome, <%= user.username %></h1>
+    <p>Email: <%= user.email %></p>
+    <p>Connected to GitHub: <%= user.provider.github %></p>
+    <p>Connected to GitLab: <%= user.provider.gitlab %></p>
+    
+    <% if (!user.provider.github) { %>
+        <a href="/auth/github" class="btn btn-primary">Connect GitHub</a><br>
+    <% } %>
+    
+    <% if (!user.provider.gitlab) { %>
+        <a href="/auth/gitlab" class="btn btn-primary">Connect GitLab</a><br>
+    <% } %>
+    
+    <a href="/logout" class="btn btn-danger">Logout</a>
+</div>

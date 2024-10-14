@@ -23,26 +23,8 @@ router.get('/', (req, res) => {
     const currentUser = users.find(u => u.email === req.user.email);
 
     if (currentUser) {
-        // Build the profile HTML
-        let profileHtml = `
-            <h1>Welcome, ${currentUser.username}</h1>
-            <p>Email: ${currentUser.email}</p>
-            <p>Connected to GitHub: ${currentUser.provider.github}</p>
-            <p>Connected to GitLab: ${currentUser.provider.gitlab}</p>
-        `;
-
-        // Add connect buttons if the providers are not connected
-        if (!currentUser.provider.github) {
-            profileHtml += `<a href="/auth/github" class="btn btn-primary">Connect GitHub</a><br>`;
-        }
-
-        if (!currentUser.provider.gitlab) {
-            profileHtml += `<a href="/auth/gitlab" class="btn btn-primary">Connect GitLab</a><br>`;
-        }
-
-        profileHtml += `<a href="/logout" class="btn btn-danger">Logout</a>`;
-
-        res.send(profileHtml);
+        // Render profile.ejs with user data
+        res.render('profile', { user: currentUser });
     } else {
         res.redirect('/');
     }

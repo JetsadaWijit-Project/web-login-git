@@ -10,26 +10,26 @@ const logoutRoutes = require('./routes/logout');
 
 const app = express();
 
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // Define views directory
+
 // Define the path for the users file
 const usersDirPath = path.join(__dirname, 'data');
 const usersFilePath = path.join(usersDirPath, 'users.json');
 
 // Function to check and create the data folder and users.json file if they don't exist
 const checkUsersFile = () => {
-    // Check if the data directory exists
     if (!fs.existsSync(usersDirPath)) {
-        fs.mkdirSync(usersDirPath); // Create the data directory
+        fs.mkdirSync(usersDirPath);
         console.log('data directory created.');
     }
-
-    // Check if the users.json file exists
     if (!fs.existsSync(usersFilePath)) {
-        fs.writeFileSync(usersFilePath, JSON.stringify([])); // Create an empty array
+        fs.writeFileSync(usersFilePath, JSON.stringify([]));
         console.log('users.json file created.');
     }
 };
 
-// Check if the users directory and file exist and create if not
 checkUsersFile();
 
 // Session setup
@@ -50,7 +50,7 @@ app.use('/profile', profileRoutes);
 app.use('/logout', logoutRoutes);
 
 app.get('/', (req, res) => {
-    res.send(`<h1>Home</h1><a href="/auth/github">Login with GitHub</a><br><a href="/auth/gitlab">Login with GitLab</a>`);
+    res.render('index'); // Render index.ejs
 });
 
 const PORT = process.env.PORT || 3000;

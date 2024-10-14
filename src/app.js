@@ -3,7 +3,6 @@ const session = require('express-session');
 const fs = require('fs');
 const path = require('path');
 const passport = require('passport');
-require('dotenv').config();
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 const logoutRoutes = require('./routes/logout');

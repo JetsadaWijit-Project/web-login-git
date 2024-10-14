@@ -1,0 +1,37 @@
+{
+  "name": "web-login-git",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JetsadaWijit/web-login-git.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JetsadaWijit/web-login-git/issues",
+    "email": "jetsadawijit@outlook.com"
+  },
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Jetsada Wijit",
+    "email": "jetsadawijit@outlook.com",
+    "url": "https://github.com/JetsadaWijit"
+  },
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-gitlab2": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

@@ -1,0 +1,11 @@
+services:
+  server:
+    build: ./src
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app
+    env_file:
+      - ./src/.env
+    restart: always

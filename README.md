@@ -23,7 +23,7 @@ GITLAB_CLIENT_SECRET=your-gitlab-client-secret
 
 SESSION_SECRET=your-session-secret
 
-CALLBACK_URL=http://localhost:3000/auth
+CALLBACK_URL={http||https}://{your-website-url}/auth # example https://example.com/auth
 ```
 
 # Member

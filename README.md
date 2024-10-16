@@ -26,6 +26,11 @@ SESSION_SECRET=your-session-secret
 CALLBACK_URL={http||https}://{your-website-url}/auth # example https://example.com/auth
 ```
 
+# Command
+```
+docker-compose up -d
+```
+
 # Member
 
 |Status|GitHub|Email|

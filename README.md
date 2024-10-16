@@ -26,6 +26,12 @@ SESSION_SECRET=your-session-secret
 CALLBACK_URL={http||https}://{your-website-url}/auth # example https://example.com/auth
 ```
 
+URL for the Website callback URL : `{http||https}://{your-website-url}/auth/{provider}/callback`
+
+Supported Providers:
+[`GitHub`](https://github.com)
+[`GitLab`](https://gitlab.com)
+
 # Command
 ```
 docker-compose up -d
